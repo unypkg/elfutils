@@ -81,6 +81,7 @@ autoreconf -i -f
 
 ./configure \
     --prefix=/uny/pkg/"$pkgname"/"$pkgver" \
+    --enable-maintainer-mode \
     --program-prefix="eu-"
 
 make -j"$(nproc)"

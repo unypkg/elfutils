@@ -77,12 +77,14 @@ get_include_paths
 
 unset LD_RUN_PATH
 
+autoreconf -i -f
+
 ./configure \
     --prefix=/uny/pkg/"$pkgname"/"$pkgver" \
     --program-prefix="eu-"
 
 make -j"$(nproc)"
-
+make -j"$(nproc)" check
 make -j"$(nproc)" install
 
 ####################################################
